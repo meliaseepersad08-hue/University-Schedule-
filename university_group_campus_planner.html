@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>University Group Campus Planner</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,sans-serif;background:#f5f6fa;color:#202124}
+header{background:#243447;color:white;padding:24px 18px;text-align:center}
+header h1{margin:0 0 6px;font-size:24px}
+header p{margin:0;opacity:.85}
+.container{max-width:1000px;margin:20px auto;padding:0 14px}
+.tabs{display:flex;gap:8px;margin-bottom:16px}
+.tab{border:0;border-radius:10px;padding:11px 16px;background:#ddd;cursor:pointer;font-weight:700}
+.tab.active{background:#243447;color:white}
+.day{background:white;border-radius:14px;margin-bottom:18px;padding:16px;box-shadow:0 2px 8px #00000012}
+.day h2{margin:0 0 12px;font-size:20px}
+.person{border:1px solid #e4e6eb;border-radius:10px;padding:11px;margin:8px 0}
+.person strong{display:block;margin-bottom:5px}
+.free{color:#6b7280;font-style:italic}
+.together{background:#eef5ff;border-left:5px solid #3b82f6}
+.time{font-weight:700}
+.small{font-size:13px;color:#667085}
+.hidden{display:none}
+@media(max-width:600px){header h1{font-size:21px}.day{padding:12px}.tab{flex:1}}
+</style>
+</head>
+<body>
+<header>
+<h1>University Group Campus Planner</h1>
+<p>Class schedules & shared campus time</p>
+</header>
+
+<div class="container">
+<div class="tabs">
+<button class="tab active" onclick="showTab('all',this)">All schedules</button>
+<button class="tab" onclick="showTab('together',this)">Together</button>
+</div>
+
+<section id="all">
+<div class="day"><h2>Monday</h2>
+<div class="person"><strong>AMELIA</strong>9:00 AM – 12:00 PM<br>3:00 PM – 6:00 PM</div>
+<div class="person"><strong>SHANIA</strong>1:00 PM – 2:00 PM<br>5:00 PM – 7:00 PM</div>
+<div class="person"><strong>KAVITA</strong>9:00 AM – 12:00 PM<br>3:00 PM – 6:00 PM</div>
+</div>
+
+<div class="day"><h2>Tuesday</h2>
+<div class="person"><strong>AMELIA</strong>10:00 AM – 11:00 AM<br>1:00 PM – 4:00 PM</div>
+<div class="person"><strong>SHANIA</strong>1:00 PM – 3:00 PM<br>5:00 PM – 8:00 PM</div>
+<div class="person"><strong>KAVITA</strong>10:00 AM – 11:00 AM<br>1:00 PM – 4:00 PM<br>5:00 PM – 8:00 PM</div>
+<div class="person"><strong>KERESE</strong>9:00 AM – 11:00 AM<br>12:00 PM – 1:00 PM</div>
+</div>
+
+<div class="day"><h2>Wednesday</h2>
+<div class="person"><strong>AMELIA</strong>5:00 PM – 8:00 PM</div>
+<div class="person"><strong>SHANIA</strong><span class="free">FREE</span></div>
+<div class="person"><strong>KENISHA</strong>10:00 AM – 1:00 PM</div>
+<div class="person"><strong>KERESE</strong>8:00 AM – 11:00 AM</div>
+</div>
+
+<div class="day"><h2>Thursday</h2>
+<div class="person"><strong>AMELIA</strong><span class="free">FREE</span></div>
+<div class="person"><strong>SHANIA</strong>11:00 AM – 12:00 PM <span class="small">(ONLINE)</span><br>5:00 PM – 7:00 PM</div>
+<div class="person"><strong>KENISHA</strong>4:00 PM – 7:00 PM</div>
+<div class="person"><strong>KERESE</strong>10:00 AM – 12:00 PM<br>12:00 PM – 1:00 PM<br>4:00 PM – 5:00 PM<br>5:00 PM – 7:00 PM</div>
+</div>
+
+<div class="day"><h2>Friday</h2>
+<div class="person"><strong>AMELIA</strong>10:00 AM – 12:00 PM<br>12:00 PM – 1:00 PM</div>
+<div class="person"><strong>SHANIA</strong>10:00 AM – 1:00 PM</div>
+<div class="person"><strong>KENISHA</strong>10:00 AM – 1:00 PM<br>3:00 PM – 6:00 PM</div>
+<div class="person"><strong>KAVITA</strong><span class="free">No classes listed</span></div>
+<div class="person"><strong>KERESE</strong><span class="free">No classes listed</span></div>
+</div>
+</section>
+
+<section id="together" class="hidden">
+<div class="day together"><h2>Best 3-Person Campus Overlaps</h2>
+<p><span class="time">Friday: 10:00 AM – 1:00 PM</span><br>AMELIA + SHANIA + KENISHA</p>
+<p><span class="time">Thursday: 5:00 PM – 7:00 PM</span><br>SHANIA + KENISHA + KERESE</p>
+</div>
+<div class="day"><h2>Other Shared Campus Times</h2>
+<p><b>Monday:</b> 9:00 AM – 12:00 PM and 3:00 PM – 6:00 PM — Amelia + Kavita</p>
+<p><b>Tuesday:</b> 10:00 AM – 11:00 AM — Amelia + Kavita + Kerese</p>
+<p><b>Tuesday:</b> 1:00 PM – 3:00 PM — Amelia + Shania + Kavita</p>
+<p><b>Tuesday:</b> 3:00 PM – 4:00 PM — Amelia + Kavita</p>
+<p><b>Tuesday:</b> 5:00 PM – 8:00 PM — Shania + Kavita</p>
+<p><b>Wednesday:</b> 10:00 AM – 11:00 AM — Kenisha + Kerese</p>
+<p><b>Thursday:</b> 4:00 PM – 5:00 PM — Kenisha + Kerese</p>
+</div>
+</section>
+</div>
+
+<script>
+function showTab(tab,button){
+document.getElementById('all').classList.toggle('hidden',tab!=='all');
+document.getElementById('together').classList.toggle('hidden',tab!=='together');
+document.querySelectorAll('.tab').forEach(b=>b.classList.remove('active'));
+button.classList.add('active');
+}
+</script>
+</body>
+</html>
